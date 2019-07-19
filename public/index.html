@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product</title>
+    <style>
+      #product-list {
+        display: block;
+        width: 100%;
+        margin: auto 0;
+      }
+      #product-list li {
+        display: block;
+        width: 33%;
+        margin: auto 0;
+        float: left;
+      }
+      #product-list li img {
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <h1>Product List</h1>
+
+    <ul id="product-list">
+    </ul>
+
+    <script id="product-item" type="text/x-jsrender">
+      {{props}}
+      <li>
+        <img src="{{:prop.url}}" />
+        <p>
+          <a href="product.html?id={{>key}}">
+          {{:prop.title}}
+          </a>
+        </p>
+        <p>
+          ${{:prop.price}}
+        </p>
+      </li>
+      {{/props}}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.1/jsrender.min.js"></script>
+    <script src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/productList.js"></script>
+</body>
+</html>
